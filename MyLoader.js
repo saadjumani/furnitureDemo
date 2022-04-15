@@ -241,6 +241,7 @@ function createUnityInstance(canvas, config, onProgress) {
     } else if (message.indexOf("Invalid array buffer length") != -1  || message.indexOf("Invalid typed array length") != -1 || message.indexOf("out of memory") != -1 || message.indexOf("could not allocate memory") != -1) {
       message = "The browser could not allocate enough memory for the WebGL content. If you are the developer of this content, try allocating less memory to your WebGL build in the WebGL player settings.";
     }
+
     alert(message);
     errorHandler.didShowErrorMessage = true;
   }
@@ -291,6 +292,14 @@ function createUnityInstance(canvas, config, onProgress) {
     }
     var totalProgress = started ? (started - unfinishedNonComputable - (total ? computable * (total - loaded) / total : 0)) / started : 0;
     onProgress(0.9 * totalProgress);
+
+      var LBar = document.getElementById("LoadBar");
+var CBar = document.getElementById("LoadContainer");
+LBar.style.width = totalProgress*200+"px";
+if(totalProgress == 1){
+  CBar.style.display="none";
+}
+
   }
 
     Module.XMLHttpRequest = function () {

@@ -25,21 +25,19 @@ https://github.com/sno/unity-webgl-responsive
     <div class="webgl-wrapper">
       <div class="aspect"></div>
       <div class="webgl-content">
-        <div id="unityContainer">
-          <canvas id="unity-canvas" style="background: #231F20"></canvas>
+       <div id="unityContainer">
+
+          <div id="LoadContainer" style="display: block; position: absolute; top: 50%; left: 50%; margin-left: -100px; margin-top: -7px; height: 15px; width: 200px; border-style: solid; border: color #999; border-width: 1px; z-index: 9;">
+          <div id="LoadBar" style="display: block; background-color: white; height: 15px; width: 0px; z-index: 10;"></div>
+          </div>
+          <canvas id="unity-canvas" style="background: #231F20;"></canvas>
         </div>
-      </div>
+    </div>
     </div>
 
     <div class="info">
       <p>unity webgl responsive</p>
       <p>press F or <a href="#" onclick="myGameInstance.SetFullscreen(1)">click here</a> to toggle fullscreen</p>
-    </div>
-
-    <!-- feel free to remove all credits! -->
-    <div class="info">
-      <p>source code on <a href="https://github.com/sno/unity-webgl-responsive">github</a></p>
-      <p>template by dom / <a href="https://twitter.com/zerstoerer">@zerstoerer</a></p>
     </div>
 
     <script src="MyLoader.js"></script>
