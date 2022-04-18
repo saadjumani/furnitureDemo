@@ -1,72 +1,17 @@
-<!--
-unity webgl responsive
-
-template by dom
-dom@crowscrowscrows.com
-https://twitter.com/zerstoerer
-
-source code on github
-https://github.com/sno/unity-webgl-responsive
--->
-
-<!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <title>Furnit1</title>
-  </head>
-  <body>
-    <div class="webgl-wrapper">
-      <div class="aspect"></div>
-      <div class="webgl-content">
-       <div id="unityContainer">
-
-          <div id="LoadContainer" style="display: block; position: absolute; top: 50%; left: 50%; margin-left: -100px; margin-top: -7px; height: 15px; width: 200px; border-style: solid; border: color #999; border-width: 1px; z-index: 9;">
-          <div id="LoadBar" style="display: block; background-color: white; height: 15px; width: 0px; z-index: 10;"></div>
-          </div>
-          <canvas id="unity-canvas" style="background: #231F20;"></canvas>
-        </div>
-    </div>
-    </div>
-
-    <div class="info">
-    </div>
-
-    <script src="MyLoader.js"></script>
-    <script>
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/Demo.data",
-        frameworkUrl: "Build/Demo.framework.js",
-        codeUrl: "Build/Demo.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "Furnit1",
-        productVersion: "0.1",
-      }).then((unityInstance) => {
-        myGameInstance = unityInstance;
-      });
-    </script>
-
-    <!-- check for F key press to toggle full screen -->
-    <script>
-      var isFullscreen = false;
-
-      document.addEventListener('keydown', function(event) {
-          if (event.which === 70) {
-              if (!isFullscreen) {
-                myGameInstance.SetFullscreen(1);
-              } else {
-                myGameInstance.SetFullscreen(0);
-              }
-              isFullscreen = !isFullscreen;
-          }
-      });
-    </script>
-  </body>
+<!doctype html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover' />
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <style></style>
+    <title>FurnitureDemo</title>
+    <script src="playcanvas-stable.min.js"></script>
+    <script src="__settings__.js"></script>
+</head>
+<body>
+    <script src="__start__.js"></script>
+    <script src="__loading__.js"></script>
+</body>
 </html>
